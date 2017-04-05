@@ -1,0 +1,19 @@
+
+<ul>
+  <li><a href="/contacts">View all contacts</a></li>
+    <h1>All Contacts</h1>
+      <ul>
+        <% Contact.all.each do |contact| %>
+        <h2> Contact Buddy</h2>
+        <li><%= contact.first_name %> <%= contact.last_name %></li>
+        <li><%= contact.email %></li>
+        <li><%= contact.note %> </li>
+        <% end %>
+      </ul>
+
+  <li><a href="/contacts/new">Add a new contacts</a></li>
+  <li><a href="/contacts">Modify an existing contact</a></li>
+  <li><a href="/contacts">Delete a contact</a></li>
+  <li><a href="/contacts">Search by attribute</a></li>
+  <li><a href="/contacts">Exits</a></li>
+</ul>
