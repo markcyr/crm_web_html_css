@@ -11,17 +11,17 @@ class Contact
   @@contacts = []
   @@next_id = 1000
 
-  def initialize(first_name, last_name, email, note = 'N/A')
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
-    @note = note
+  def initialize(options)
+    @first_name = options['first_name']
+    @last_name = options['last_name']
+    @email = options['email']
+    @note = options['note']
     @id = @@next_id
 
     @@next_id += 1
   end
 
-  def self.create(first_name, last_name, email, note = 'N/A')
+  def self.create(options)
     new_contact = new(first_name, last_name, email, note)
     @@contacts << new_contact
     new_contact
@@ -33,7 +33,7 @@ class Contact
   end
 
   def self.all_count
-    @@contacts.length    
+    @@contacts.length
   end
 
   def full_name

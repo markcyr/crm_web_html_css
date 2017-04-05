@@ -22,6 +22,21 @@ require 'sinatra'
     erb :new_contact
   end
 
+  get '/contacts/about' do
+      @crm_app_name = "Mark's CRM"
+    erb :about
+  end
+
+  get '/contacts/edit' do
+      @crm_app_name = "Mark's CRM"
+    erb :edit
+  end
+
+  get '/contacts/delete' do
+      @crm_app_name = "Mark's CRM"
+    erb :delete
+  end
+
   post '/contacts' do
     Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
     redirect to('/contacts')
