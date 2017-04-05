@@ -1,7 +1,8 @@
-
+<!--
 <ul>
-  <li><a href="/contacts">View all contacts</a></li>
-    <h1>All Contacts</h1>
+  <li><a href="/contacts">View all contacts</a></li> -->
+    <div>There are <span><%= Contact.all_count %></span> </div>
+
       <ul>
         <% Contact.all.each do |contact| %>
         <h2> Contact Buddy</h2>
@@ -11,9 +12,9 @@
         <% end %>
       </ul>
 
-  <li><a href="/contacts/new">Add a new contacts</a></li>
+  <!-- <li><a href="/contacts/new">Add a new contacts</a></li>
   <li><a href="/contacts">Modify an existing contact</a></li>
   <li><a href="/contacts">Delete a contact</a></li>
   <li><a href="/contacts">Search by attribute</a></li>
   <li><a href="/contacts">Exits</a></li>
-</ul>
+</ul> -->

@@ -1,10 +1,23 @@
-H1 {
-    background-color: green;
+*,
+*:before,
+*:after {
+font-family: sans-serif;
+box-sizing: border-box;
+        }
+
+html {
+  margin: = 0px;
+  padding: 0px;
+
+
+}
+h1 {
+    background-color: black;
     color: white;
     border-color: black;
     text-align: center;
-
-}
+    margin: 0px;
+  }
 
 nav {
       background-color: grey;
@@ -12,23 +25,39 @@ nav {
       text-align: center;
     }
 
-  a {
+  nav a {
     font-size: 18px;
     color: white;
+    text-decoration: none;
+
   }
 
   ul {
-      background-color: teal;
+      background-color: #00ecd3;
       color: black;
 
-  }
+    }
+
+  .navli {
+      background-color: grey;
+      color: white;
+      text-align: center;
+      margin: 1px;
+      list-style-type: none;
+        }
+
+span {
+    border-bottom: 5px solid grey;
+}
 
 div {
-    background-color: red;
+    background-color: #ff7063;
     color: black;
+    padding: 10px;
 }
 
 footer {
     background-color: black;
     color : white;
+    text-align: center;
 }
