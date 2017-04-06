@@ -10,7 +10,7 @@
         <li><%= contact.email %></li>
         <li><%= contact.first_name %> <%= contact.last_name %></li>
         <li></li>
-        <li><a href="/edit">Edit</a>|<a href="/delete">Delete</a><li>
+        <li><a href="/contacts/<%= contact.id %>/edit">Edit</a>|<a href="/contacts/<%= contact.id %>">Delete</a><li>
 
       </ul>
   <% end %>

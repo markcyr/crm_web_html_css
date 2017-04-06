@@ -16,10 +16,6 @@ require 'sinatra'
     erb :contacts
   end
 
-  get '/contactsall' do
-    @crm_app_name = "Mark's CRM"
-    erb :contacts_all
-  end
 
   get '/new' do
       @crm_app_name = "Mark's CRM"
@@ -31,21 +27,50 @@ require 'sinatra'
     erb :about
   end
 
-  get '/edit' do
-      @crm_app_name = "Mark's CRM"
-    erb :edit
-  end
-
-  get '/delete' do
-      @crm_app_name = "Mark's CRM"
-    erb :delete
-  end
 
   post '/contacts' do
     Contact.create(params)
     redirect to('/contacts')
-
   end
+
+  get '/contacts/:id' do
+    @contact = Contact.find(params[:id].to_i)
+    erb :show_contact
+  end
+
+  get '/contacts/:id/edit' do
+  @contact = Contact.find(params[:id].to_i)
+    if @contact
+      erb :edit_contact
+    else
+      raise Sinatra::NotFound
+    end
+  end
+
+put '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.note = params[:note]
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+delete '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.delete
+      erb :show_contact
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+end
+
 
 marty = {'first_name'=>"Marty", 'last_name'=>"McFly",'email'=>"marty@mcfly.com",'note'=>"son"}
 Contact.create(marty)

@@ -6,7 +6,7 @@
 # If your implementation of the Contact class is 'right', then you should see that all tests pass!
 class Contact
   attr_reader :id
-  attr_accessor :first_name, :last_name, :email, :note
+  attr_accessor :first_name, :last_name, :email, :note , :id
 
   @@contacts = []
   @@next_id = 1000
@@ -16,8 +16,8 @@ class Contact
     @last_name = options['last_name']
     @email = options['email']
     @note = options['note']
-    @id = @@next_id
-    puts options
+    @id =  @@next_id
+puts options
 
     @@next_id += 1
   end
@@ -26,6 +26,7 @@ class Contact
     new_contact = new(options)
     @@contacts << new_contact
     new_contact
+
   end
 
 
@@ -36,7 +37,7 @@ class Contact
   def self.all_count
     @@contacts.length
   end
-
+  #
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -62,13 +63,10 @@ class Contact
        return false
   end
 
-  def self.delete(id)
-    @@contacts.each do |contact|
-      if id == contact.id
-        @@contacts.delete contact
-      end
-    end
+  def delete
+    @@contacts.delete_if { |contact| contact.id == self.id }
   end
+
 
   def self.update(id,attribute,value)
     @@contacts.each do |contact|
