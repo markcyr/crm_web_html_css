@@ -6,8 +6,7 @@ box-sizing: border-box;
         }
 
 html {
-  margin: = 0px;
-  padding: 0px;
+
       list-style-type: none;
 
 }
@@ -19,42 +18,47 @@ h1 {
     margin: 0px;
   }
 
-nav {
+  .contact_list {
+      background-color: #00ecd3;
+      color: black;
+      list-style-type: none;
+      margin: 20px;
+    }
+nav ul {
       background-color: grey;
       color: white;
       text-align: center;
-    }
+      text-decoration: none;
+        list-style-type: none;
+  }
 
   nav a {
     font-size: 18px;
     color: white;
     text-decoration: none;
-
   }
 
-  ul {
-      background-color: #00ecd3;
-      color: black;
-      list-style-type: none;
 
-    }
-
-  .navli {
+/*
+  .navul {
       background-color: grey;
       color: white;
       text-align: center;
       margin: 1px;
       list-style-type: none;
-        }
-
-span {
-    border-bottom: 5px solid grey;
+        }*/
+main {
+      margin: 10px;
 }
 
 div {
-    background-color: #ff7063;
-    color: black;
-    padding: 10px;
+  background-color: #ff7063;
+  margin: 20px;
+  padding: 20px;
+}
+}
+span {
+    border-bottom: 5px solid grey;
 }
 
 footer {

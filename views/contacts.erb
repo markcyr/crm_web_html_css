@@ -1,16 +1,21 @@
 <!--
 <ul>
   <li><a href="/contacts">View all contacts</a></li> -->
-    <div>There are <span><%= Contact.all_count %></span> </div>
+<main>
 
-      <ul>
-        <% Contact.all.each do |contact| %>
+    <div>There are <span><%= Contact.all_count %></span> contacts</div>
+  <% Contact.all.each do |contact| %>
+      <ul class="contact_list" >
+
         <li><%= contact.email %></li>
         <li><%= contact.first_name %> <%= contact.last_name %></li>
-        <% end %>
+        <li></li>
         <li><a href="/edit">Edit</a>|<a href="/delete">Delete</a><li>
-      </ul>
 
+      </ul>
+  <% end %>
+
+</main>
   <!-- <li><a href="/contacts/new">Add a new contacts</a></li>
   <li><a href="/contacts">Modify an existing contact</a></li>
   <li><a href="/contacts">Delete a contact</a></li>

@@ -17,12 +17,13 @@ class Contact
     @email = options['email']
     @note = options['note']
     @id = @@next_id
+    puts options
 
     @@next_id += 1
   end
 
   def self.create(options)
-    new_contact = new(first_name, last_name, email, note)
+    new_contact = new(options)
     @@contacts << new_contact
     new_contact
   end
@@ -85,8 +86,9 @@ class Contact
   end
 
   def self.delete_all
-    @@contacts = []
+    @@contacts.clear
   end
+
 
 
 
@@ -98,4 +100,6 @@ class Contact
   # def first_name=(new_name)
   #   @first_name = new_name
   # end
+
+
 end
